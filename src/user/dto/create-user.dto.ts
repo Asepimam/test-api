@@ -10,7 +10,7 @@ export class CreateUserDto {
   @IsString()
   readonly username: string;
 
-  @IsString()
+  @IsString({ message: 'Password is required' })
   @IsNotEmpty()
   @IsStrongPassword({
     minLength: 5,
